@@ -148,6 +148,11 @@ a{text-decoration:none;color:inherit}
   flex-wrap:wrap;
   justify-content:flex-end;
 }
+.nav__right .btn,
+.nav__right .control-btn{
+  flex:0 0 auto;
+}
+
 .control-btn{
   border:1px solid var(--line);
   background:var(--panel);
@@ -737,20 +742,46 @@ a{text-decoration:none;color:inherit}
   .nav__inner{
     flex-direction:column;
     align-items:flex-start;
+    gap:12px;
   }
+
   .nav__right{
     width:100%;
-    justify-content:flex-start;
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    gap:10px;
+    padding-bottom:4px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+
+  .nav__right::-webkit-scrollbar{
+    display:none;
+  }
+
+  .nav__right .btn,
+  .nav__right .control-btn{
+    width:auto;
+    min-width:max-content;
+    flex:0 0 auto;
   }
 
   .hero{
     padding:52px 0 24px;
   }
+
   .hero__actions,
   .hero__badges,
   .hero-card__cta{
     flex-direction:column;
     align-items:stretch;
+  }
+
+  .hero__actions .btn,
+  .hero-card__cta .btn{
+    width:100%;
   }
 
   .why__grid,
@@ -765,6 +796,7 @@ a{text-decoration:none;color:inherit}
     grid-template-columns:1fr;
     padding:16px;
   }
+
   .mentor-card__media{
     max-width:220px;
     width:100%;
@@ -772,6 +804,7 @@ a{text-decoration:none;color:inherit}
     aspect-ratio:1/1;
     margin:0 auto;
   }
+
   .mentor-card__body{
     text-align:left;
   }
@@ -780,7 +813,7 @@ a{text-decoration:none;color:inherit}
     flex-direction:column;
   }
 
-  .btn{
-    width:100%;
+  .section{
+    padding:48px 0;
   }
-}
+} 
